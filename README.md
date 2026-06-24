@@ -15,6 +15,55 @@ This bot helps Persian-speaking learners improve their German through grammar co
 * ⚙️ Customizable word count and delivery time
 * ☁️ Serverless deployment on Cloudflare Workers
 * 🤖 Powered by Google Gemini and Cloudflare Workers AI
+## 🚀 Deployment
+
+### 1. Create a Cloudflare Worker
+
+Create a new Worker from the Cloudflare Dashboard.
+
+### 2. Copy the Source Code
+
+Replace the default Worker code with the contents of this repository.
+
+### 3. Create a KV Namespace
+
+Create a KV namespace and bind it to your Worker using the following binding name:
+
+```text
+AI
+```
+
+### 4. Configure Secrets
+
+Add the following secrets:
+
+```text
+TELEGRAM_BOT_TOKEN=your_bot_token
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+### Required Bindings
+
+```text
+AI (KV Namespace)
+```
+
+### 5. Configure Cron Trigger (Optional)
+
+Add a Cron Trigger if you want automatic daily vocabulary delivery.
+
+### 6. Set Telegram Webhook
+
+```text
+https://api.telegram.org/bot<TOKEN>/setWebhook?url=<WORKER_URL>
+```
+
+### 7. Deploy
+
+Save and deploy the Worker from the Cloudflare Dashboard.
+
+The bot is now ready to use.
+
 
 ## Commands
 
