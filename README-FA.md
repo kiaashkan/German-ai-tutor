@@ -16,6 +16,56 @@
 * ☁️ اجرای کامل روی Cloudflare Workers
 * 🤖 استفاده از Google Gemini و Cloudflare Workers AI
 
+## 🚀 راه‌اندازی
+
+### 1. ساخت Cloudflare Worker
+
+از طریق داشبورد Cloudflare یک Worker جدید ایجاد کنید.
+
+### 2. کپی کردن سورس
+
+کد این مخزن را جایگزین کد پیش‌فرض Worker کنید.
+
+### 3. ساخت KV Namespace
+
+یک KV Namespace ایجاد کرده و آن را با نام زیر به Worker متصل (Bind) کنید:
+
+```text
+AI
+```
+
+### 4. تنظیم متغیرهای محرمانه
+
+مقادیر زیر را به Worker اضافه کنید:
+
+```text
+TELEGRAM_BOT_TOKEN=توکن_ربات
+GEMINI_API_KEY=کلید_Gemini
+```
+
+### Binding موردنیاز
+
+```text
+AI (KV Namespace)
+```
+
+### 5. تنظیم Cron Trigger (اختیاری)
+
+برای ارسال خودکار واژگان روزانه، یک Cron Trigger تعریف کنید.
+
+### 6. تنظیم Webhook تلگرام
+
+```text
+https://api.telegram.org/bot<TOKEN>/setWebhook?url=<WORKER_URL>
+```
+
+### 7. استقرار
+
+Worker را ذخیره و Deploy کنید.
+
+اکنون ربات آماده استفاده است.
+
+
 ## دستورات
 
 | دستور       | توضیح                                 |
