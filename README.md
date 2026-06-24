@@ -29,7 +29,7 @@ This bot helps Persian-speaking learners improve their German through grammar co
 | `/auto off` | Disable daily vocabulary delivery             |
 | `/settings` | Show current configuration                    |
 
-## Technology Stack
+## Built With
 
 * Cloudflare Workers
 * Cloudflare KV
